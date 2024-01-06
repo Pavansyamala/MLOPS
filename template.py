@@ -1,7 +1,7 @@
 import os 
 from pathlib import Path 
 
-list_of_files = [
+list_of_files = [   
     ".github/workflows/.gitkeep",
     "src/__init__.py",
     "src/components/__init__.py",
@@ -16,7 +16,7 @@ list_of_files = [
     "src/utils/utils.py",
     "test/unit/__init__.py",
     "test/integration/__init__.py",
-    "init_setup.py",
+    "init_setup.sh",
     "requirements.txt",
     "requirements_dev.txt",
     "src/logger/logging.py",
@@ -37,4 +37,4 @@ for file_path in list_of_files:
         # logging.info(f"Creating Directory : {file_dir} for file : {filename}")
     if (not os.path.exists(file_path)) or (os.path.getsize(file_path) == 0):
         with open(file_path , "w") as file:
-            pass 
+            pass
