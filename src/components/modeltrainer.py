@@ -55,11 +55,3 @@ class ModelTrainer:
         except Exception as e :
             logging.info(e)
             raise CustomException(e , sys)
-
-if __name__ == "__main__" :
-    obj = DataIngestion()
-    train_path , test_path = obj.initiate_data_ingestion()
-    obj1 = DataTransformation()
-    train_arr , test_arr = obj1.initiate_data_transformation(train_path , test_path) 
-    obj3 = ModelTrainer()
-    obj3.initiate_model_trainer(train_arr,test_arr)
