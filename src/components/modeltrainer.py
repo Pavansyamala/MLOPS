@@ -7,6 +7,8 @@ from src.exception.exception import CustomException
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from pathlib import Path 
+import mlflow 
+import mlflow.sklearn 
 
 from src.components.dataingestion import DataIngestion
 from src.components.datatransformation import DataTransformation
@@ -28,10 +30,13 @@ class ModelTrainer:
             x_train , y_train = train_array[:,:-1] , train_array[:,-1]
             x_test , y_test = test_array[:,:-1] , test_array[:,-1]
 
+            mlflow.set_tracking_uri(uri="http://localhost:5000")
+            mlflow.set_experiment("MLflow Quickstart")
+
             models = {
                 'LinearRegression' : LinearRegression(),
                 'Lasso' : Lasso(),
-                'Ridge' : Ridge()
+                'Ridge' : Ridge()   
             }
 
             report  = evaluate_model(x_train,y_train,x_test,y_test , models) 
@@ -50,8 +55,25 @@ class ModelTrainer:
 
             save_object(self.model_config.model_path , models[best_model])
 
-            logging.info("Succesfully Saved Best Model")
+            logging.info("Succesfully Saved Best Model") 
+
+            with mlflow.start_run():
+                mlflow.log_metric("accuracy", best_score)
+                mlflow.set_tag("Training Info", "Basic LinearRegression model")
+                params = {
+                    'learning_rate' : 0.01 
+                }
+                mlflow.log_params(params) 
+                signature = infer_signature(x_train, models[best_model].predict(x_train))
+                model_info = mlflow.sklearn.log_model(
+                        sk_model=models[best_model],
+                        artifact_path="Dimond_Price_Prediction",
+                        signature=signature,
+                        input_example=x_train,
+                        registered_model_name="tracking-quickstart",
+                    )
 
         except Exception as e :
             logging.info(e)
             raise CustomException(e , sys)
+
