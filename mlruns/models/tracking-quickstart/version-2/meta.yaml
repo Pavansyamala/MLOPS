@@ -1,0 +1,12 @@
+creation_timestamp: 1707705960375
+current_stage: None
+description: null
+last_updated_timestamp: 1707705960375
+name: tracking-quickstart
+run_id: 44eb02c2088c4c90862e607547bb360e
+run_link: null
+source: file:///config/workspace/mlruns/439581217379731202/44eb02c2088c4c90862e607547bb360e/artifacts/Dimond_Price_Prediction
+status: READY
+status_message: null
+user_id: null
+version: 2

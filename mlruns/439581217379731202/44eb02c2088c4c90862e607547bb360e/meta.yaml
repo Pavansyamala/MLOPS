@@ -1,0 +1,15 @@
+artifact_uri: file:///config/workspace/mlruns/439581217379731202/44eb02c2088c4c90862e607547bb360e/artifacts
+end_time: 1707705960381
+entry_point_name: ''
+experiment_id: '439581217379731202'
+lifecycle_stage: active
+run_id: 44eb02c2088c4c90862e607547bb360e
+run_name: mysterious-rat-104
+run_uuid: 44eb02c2088c4c90862e607547bb360e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707705957144
+status: 3
+tags: []
+user_id: abc

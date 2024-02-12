@@ -9,6 +9,8 @@ from dataclasses import dataclass
 from pathlib import Path 
 import mlflow 
 import mlflow.sklearn 
+from mlflow.models import infer_signature
+from urllib.parse import urlparse
 
 from src.components.dataingestion import DataIngestion
 from src.components.datatransformation import DataTransformation
@@ -30,7 +32,9 @@ class ModelTrainer:
             x_train , y_train = train_array[:,:-1] , train_array[:,-1]
             x_test , y_test = test_array[:,:-1] , test_array[:,-1]
 
-            mlflow.set_tracking_uri(uri="http://localhost:5000")
+            mlflow.set_registry_uri("")
+            tracking_uri_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+
             mlflow.set_experiment("MLflow Quickstart")
 
             models = {

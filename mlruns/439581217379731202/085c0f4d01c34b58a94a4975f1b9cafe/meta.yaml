@@ -1,0 +1,15 @@
+artifact_uri: file:///config/workspace/mlruns/439581217379731202/085c0f4d01c34b58a94a4975f1b9cafe/artifacts
+end_time: 1707705938916
+entry_point_name: ''
+experiment_id: '439581217379731202'
+lifecycle_stage: active
+run_id: 085c0f4d01c34b58a94a4975f1b9cafe
+run_name: zealous-midge-237
+run_uuid: 085c0f4d01c34b58a94a4975f1b9cafe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707705935619
+status: 3
+tags: []
+user_id: abc

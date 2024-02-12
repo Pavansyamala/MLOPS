@@ -1,0 +1,15 @@
+artifact_uri: file:///config/workspace/mlruns/439581217379731202/e80e10cb6cf74da6bf4c1f00dd2a2859/artifacts
+end_time: 1707705885722
+entry_point_name: ''
+experiment_id: '439581217379731202'
+lifecycle_stage: active
+run_id: e80e10cb6cf74da6bf4c1f00dd2a2859
+run_name: peaceful-fowl-32
+run_uuid: e80e10cb6cf74da6bf4c1f00dd2a2859
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1707705885709
+status: 4
+tags: []
+user_id: abc
